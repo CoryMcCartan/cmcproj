@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+*.tmp
+*.swp
+*.bak
+.DS_Store

@@ -1,0 +1,20 @@
+# This file provides the metadata necessary for RStudio to
+# use the 'cmc_proj()' function when initializing a project. See
+# the documentation online at:
+#
+#   https://rstudio.github.io/rstudio-extensions/rstudio_project_templates.html
+#
+# for more details.
+
+Binding: cmc_proj
+Title: Statistical Research Project
+Subtitle: Set Up a new Statistical Research Project
+Caption: Set up statistical research project
+Icon: icon.png
+
+Parameter: license
+Widget: SelectInput
+Label: Software License
+Fields: MIT, GPL3, Other (add later)
+Default: MIT
+Position: left
