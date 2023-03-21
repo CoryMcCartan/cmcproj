@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Provides an opinionated project template for applied statistical research. Designed to include both paper, replication code, and standalone software package.
+Provides an opinionated project template for applied statistical research. Designed to include paper, replication code, and a standalone software package.
 }
 \author{
 \strong{Maintainer}: Cory McCartan \email{cmccartan@g.harvard.edu} (\href{https://orcid.org/0000-0002-6251-669X}{ORCID})

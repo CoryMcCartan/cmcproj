@@ -10,9 +10,12 @@ cmc_proj <- function(path, license="mit", ...) {
     file.copy(file.path(tmpl_dir, "."), path, recursive=TRUE)
     ignore_tmpl = c("*.dcf", "icon.png")
     file.remove(Sys.glob(file.path(path, ignore_tmpl)))
+    file.rename(file.path(path, "gitignore"), file.path(path, ".gitignore"))
+    file.rename(file.path(path, "Rbuildignore"), file.path(path, ".Rbuildignore"))
 
     usethis::create_package(path, check_name=FALSE, open=FALSE)
     usethis::local_project(path)
+    usethis:::git_init()
 
     licenses = c("mit", "gpl3")
     license = tolower(license)
@@ -23,6 +26,7 @@ cmc_proj <- function(path, license="mit", ...) {
     usethis::use_git_ignore(file.path("paper", paste0(proj_nm, ".tex")))
     usethis::use_readme_rmd(open=FALSE)
 
+    path <- as.character(usethis::proj_get())
     path_paper = file.path(path, "paper")
     zip_path <- file.path(path_paper, "template.zip")
     zip_url <- "https://github.com/CoryMcCartan/cmc-article/archive/refs/heads/main.zip"
@@ -32,11 +36,9 @@ cmc_proj <- function(path, license="mit", ...) {
     file.copy(file.path(path_paper, "cmc-article-main/_extensions"),
               path_paper, recursive = TRUE)
     file.copy(file.path(path_paper, "cmc-article-main/template.qmd"),
-              path_paper, recursive = TRUE)
-    file.copy(file.path(path_paper, "cmc-article-main/references.bib"),
-              path_paper, recursive = TRUE)
-    file.copy(file.path(path_paper, "cmc-article-main/header.tex"),
-              path_paper, recursive = TRUE)
+              file.path(path_paper, paste0(proj_nm, ".qmd")))
+    file.copy(file.path(path_paper, "cmc-article-main/references.bib"), path_paper)
+    file.copy(file.path(path_paper, "cmc-article-main/header.tex"), path_paper)
     unlink(file.path(path_paper, "cmc-article-main/"), recursive=TRUE)
 
     invisible(TRUE)

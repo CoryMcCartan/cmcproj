@@ -11,6 +11,7 @@ Title: Statistical Research Project
 Subtitle: Set Up a new Statistical Research Project
 Caption: Set up statistical research project
 Icon: icon.png
+OpenFiles: paper/*.qmd, DESCRIPTION, replication/00_setup.R
 
 Parameter: license
 Widget: SelectInput

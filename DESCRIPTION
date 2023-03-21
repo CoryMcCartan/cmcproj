@@ -8,6 +8,8 @@ Description: Provides an opinionated project template for applied statistical
     research. Designed to include paper, replication code, and a standalone
     software package.
 Imports:
+    methods,
+    utils,
     usethis
 License: MIT + file LICENSE
 Encoding: UTF-8
